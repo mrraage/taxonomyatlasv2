@@ -1,0 +1,64 @@
+.job-posting-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.job-posting-title {
+  margin-bottom: 15px;
+}
+
+.job-posting-form {
+  margin-bottom: 15px;
+}
+
+.job-posting-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.job-posting-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.job-posting-select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.job-posting-button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.job-posting-description-title {
+  margin-bottom: 10px;
+}
+
+.job-posting-description {
+  font-size: 16px;
+}
+
+.job-posting-textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  height: 200px;
+  font-family: sans-serif;
+  font-size: 16px;
+  resize: vertical;
+}

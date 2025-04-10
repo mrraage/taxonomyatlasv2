@@ -1,0 +1,35 @@
+**1. Översikt**
+Taxonomy Atlas ska presentera taxonomins termer, begrepp och relationer på ett användarvänligt sätt. Den ska också visa förändringar mellan versioner och möjliggöra enkel navigering och sökning.
+
+**2. Funktionella krav**
+
+2.1 **Visning av taxonomi**
+- Systemet ska kunna läsa och presentera taxonomins termer och begrepp i en hierarkisk struktur.
+- Varje term ska ha en detaljerad vy med beskrivning och relevanta metadata.
+- Relationer mellan termer ska visualiseras på ett interaktivt sätt.
+
+2.2 **Sök och filtrering**
+- Användare ska kunna söka efter termer med fritextsökning.
+- Det ska vara möjligt att filtrera termer baserat på kategori, relevans och förändringsstatus.
+- Det ska gå att hämta information om ett specifikt begrepp genom att använda ett koncept-ID.
+- Det ska gå att välja version av taxonomin.
+
+2.3 **Hantering av förändringar**
+- Systemet ska visa vilka termer som är nya i den senaste versionen av taxonomin.
+- Systemet ska visa vilka termer som har avaktualiserats.
+- Systemet ska kunna jämföra två versioner och visa skillnader.
+
+2.4 **Användarinteraktion**
+- Användare ska kunna klicka på en term för att se detaljerad information.
+- Systemet ska ha en visuell indikation på förändringar, exempelvis färgkodning.
+- Systemet ska ha en funktion för att exportera information om en specifik term eller hela taxonomin.
+
+2.5 **Demo-utrymme**
+- Systemet ska innehålla ett demo-utrymme där användare kan testa olika komponenter avsedda att underlätta arbetet med taxonomin.
+
+2.6 **Landningssida**
+- Systemet ska ha en landningssida som ger en översikt över taxonomin och dess syfte.
+- Landningssidan ska innehålla länkar till viktiga funktioner och information om senaste versionen av taxonomin.
+
+2.7 **Tillgänglighet och användarvänlighet**
+- Systemet ska följa WCAG 2 riktlinjer för tillgänglighet.

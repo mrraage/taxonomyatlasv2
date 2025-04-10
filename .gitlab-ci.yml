@@ -1,0 +1,45 @@
+image: node:23.7.0
+
+stages:
+  - test
+  - deploy
+
+# default config for each job
+default:
+  cache:
+    - key:
+        files:
+          - package-lock.json
+      paths:
+        - .npm/
+  before_script: &install_npm_dependencies
+    - npm ci --cache .npm --prefer-offline
+
+test-atlas:
+  stage: test
+  needs: []
+  before_script:
+    - *install_npm_dependencies
+  script:
+    - npm run test:once
+  artifacts:
+    paths:
+      - junit-report.xml
+    reports:
+      junit: junit-report.xml
+
+
+# https://vite.dev/guide/static-deploy.html#gitlab-pages-and-gitlab-ci
+pages:
+  stage: deploy
+  before_script:
+    - *install_npm_dependencies
+  script:
+    - npm run build
+    - cp -a dist/. public/
+    - echo '/* /index.html 200' > public/_redirects
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

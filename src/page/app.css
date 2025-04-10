@@ -1,0 +1,577 @@
+
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
+
+body {
+    background: #fefefe;
+}
+
+.font_headline {
+    font-family: 'Abril Fatface', cursive;
+}
+
+.font_text {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.font {
+    font-family: 'Calibri', sans-serif;
+}
+
+.share_icons {
+    display: flex;
+}
+
+.share_icon {
+    width: 20px;
+    height: 20px;
+    margin: 4px;
+    fill: #fefefe;
+    cursor: pointer;
+}
+
+.share_icon_black {
+    fill: #000;
+}
+
+.feedback_container {
+    display: flex;
+    flex-direction: column;
+    white-space: pre;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.feedback_container > div:first-child {
+    color: #fffe;
+}
+
+.feedback_divider {
+    border-bottom: 1px solid #fff6;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.feedback_option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.feedback_option > div:first-child {
+    margin-right: 10px;
+}
+
+.feedback_option > img {
+    max-width: 32px;
+}
+
+.share_icon_socials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 10px;
+}
+
+.share_icon_row {
+    display: flex;
+}
+
+.share_icon_row > svg {
+    cursor: pointer;
+}
+
+.suggestion_container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.suggestion_container > svg {
+    margin-right: 5px;
+}
+
+.suggestion_container > div:first-child {
+    margin-right: 10px;
+}
+
+.loader_group {
+    display: flex;
+    font-weight: bold;
+    font-variant-caps: all-petite-caps;
+    align-items: center;
+}
+
+.loader_group > div {
+    margin-right: 4px;
+}
+
+.loader {
+    border: 4px solid #c9c9c9;
+    border-top: 4px solid #27278a; 
+    border-radius: 50%;
+    min-width: 8px;
+    min-height: 8px;
+    width: 8px;
+    height: 8px;
+    animation: spin 1500ms ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        transform: rotate(360deg); 
+    }
+}
+
+.header_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_title_contianer {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.header_title_contianer > img {
+    max-height: 45px;
+}
+
+.header_title {
+    display: flex;
+    flex-direction: column;
+    font-size: 20pt;
+    padding: 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+.header_title > div:nth-child(2) {
+    font-size: 18pt;
+}
+
+.header_title > div {
+    display: flex;
+}
+
+.header_title > div > div:nth-child(1) {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.header_logo {
+    width: 300px;
+    height: 100px;
+    background-image: url('../../resources/af-logo-vit.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 20px;
+    background-position-y: center;
+    cursor: pointer;
+}
+
+.header_menu_container {
+    display: flex;
+    align-items: center;
+}
+
+.header_menu {
+    display: flex;
+    padding: 20px 20px 20px 0px;
+}
+
+.header_menu > div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #333;
+}
+
+.header_menu > div:hover {
+    text-decoration: underline;
+}
+
+
+.header_menu > a {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.header_menu > a:hover {
+    text-decoration: underline;
+}
+
+.header_menu > div svg {
+    width: 48px;
+}
+
+.header_export {
+    display: flex;
+    align-items: center;
+}
+
+.header_divider {
+    border-left: 2px solid #ccc;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.header_language_container {
+    display: flex;
+    align-items: center;
+    font-size: 12pt;
+    color: #333;
+}
+
+.header_language_container > div:first-child {
+    font-weight: bold;
+}
+
+.header_language_container > div {
+    margin-right: 20px;
+}
+
+.header_language_option {
+    cursor: pointer;
+}
+
+.header_language_selected {
+    text-decoration: underline;
+}
+
+.about_content {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    flex-direction: column;
+    position: absolute;
+    transform: translate(-50%, 50%);
+    margin-top: 15px;
+    box-shadow: 0px 0px 10px #0004;
+    z-index: 9001;
+    border-radius: 10px;
+    min-width: 400px;
+}
+
+.about_content > div {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 400;
+    white-space: pre-line;
+}
+
+.footer_feedback {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer_content {
+    display: flex;
+    flex: 0 1 0;
+    justify-content: space-between;
+    background: #00005a;
+    color: #fff;
+    padding: 0px 30px 0px 30px;
+}
+
+.footer_logos {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_jobtech {
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.footer_jobtech > img {
+    max-height: 50px;
+    pointer-events: none;
+}
+
+.footer_af_logo {
+    width: 300px;
+    height: 60px;
+    background-image: url('../../resources/af-logo-vit.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+
+.export_menu {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    flex-direction: column;
+    position: absolute;
+    transform: translate(-50%, 50%);
+    margin-top: 15px;
+    box-shadow: 0px 0px 10px #0004;
+    z-index: 9001;
+}
+
+.export_menu > li {
+    background: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    white-space: pre;
+    font-weight: 400;
+    list-style-type: none;
+}
+
+.export_menu > li:hover {
+    background: #eee;
+}
+
+.save_indicator_content {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+}
+
+.save_indicator {
+    display: flex;
+    background: #111;
+    color: #fff;
+    min-width: 200px;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+    box-shadow: 0px 5px 10px #0009;
+    transition: all 300ms ease-out;
+}
+
+.save_indicator > .loader {
+    margin-right: 5px;
+}
+
+.save_enter_margin {
+    margin-top: 5px !important;
+}
+
+.search_icon {
+    background-image: url('../../resources/search.png');
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 12px center;
+}
+
+.autocomplete_input_field {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    position: relative;
+}
+
+.autocomplete_input_field input {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ddd;
+    border-radius: 15px;
+    padding: 10px 10px 10px 35px;
+}
+
+.autocomplete_input_field input:focus {
+    outline: none;
+    box-shadow: 0px 0px 3px #3399ff;
+}
+
+/* Removed conflicting .autocomplete styles (lines 403-438) */
+/* Styling is now handled in src/index.css */
+
+.tree_view {
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+    padding: 0px;
+    margin: 0px;
+}
+
+.tree_item_base {
+    list-style-type: none;
+}
+
+.tree_item {
+	display: flex;
+	padding: 5px;
+	margin: 1px;
+	color: #000;
+	/*background: #eee;*/
+	cursor: pointer;
+    align-items: center;
+}
+
+.tree_item_children {
+    padding: 0px;
+    margin: 0px;
+}
+
+.tree_item:hover {
+	background: #ccc;
+}
+
+.tree_item_selected {
+	background: #ddd;
+}
+
+.tree_item_selected_root {
+    background: #27278a;
+    color: #fff;
+}
+
+.tree_item_selected_root:hover {
+    background: #27278a !important;
+}
+
+.tree_item_0 {
+}
+
+.tree_item_1 {
+	margin-left: 10px;
+}
+
+.tree_item_2 {
+	margin-left: 20px;
+}
+
+.tree_item_3 {
+	margin-left: 30px;
+}
+
+.tree_item_4 {
+	margin-left: 40px;
+}
+
+.tree_item_5 {
+	margin-left: 50px;
+}
+
+.tree_item_6 {
+	margin-left: 60px;
+}
+
+.tree_item_7 {
+	margin-left: 70px;
+}
+
+.rounded {
+	border-radius: 5px;
+}
+
+i {
+	margin-right: 5px;
+}
+
+i.empty {
+	width: 10px;
+}
+
+i.up {
+	width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid #000;
+}
+  
+i.down {
+	width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #000;
+}
+
+i.right {
+	width: 0; 
+	height: 0; 
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #000;
+    margin-left: 5px;
+}
+
+i.left {
+	width: 0; 
+	height: 0; 
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent; 
+    border-right: 5px solid #000; 
+}
+
+.tree_item_selected_root > i.down {
+    border-top-color: #fff;
+}
+
+.tree_item_selected_root > i.right {
+    border-left-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .header_content {
+        margin-top: -20px;
+        margin-bottom: -20px;
+    }
+
+    .header_logo {
+        width: 200px;
+    }
+
+    .footer_content {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .footer_af_logo {
+        width: 200px;
+        height: 50px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0;
+    background-clip: padding-box;
+    border: 0.05em solid #eeeeee;
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a0a0a0;
+}
+
+::-webkit-scrollbar-track {
+    background-color: unset;
+}
+
+::-webkit-scrollbar-corner { 
+    border-radius: 15px;
+}

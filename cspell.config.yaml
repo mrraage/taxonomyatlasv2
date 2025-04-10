@@ -1,0 +1,21 @@
+version: "0.2"
+ignorePaths: []
+language: en-GB, sv
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  - Esco
+  - ISCO
+  - lz
+  - mv
+  - rel
+  - rm
+  - SKAT
+  - sni
+  - ssyk
+  - sv
+  - SWE
+  - worktime
+  - X-UA-Compatible
+ignoreWords: []
+import: []
