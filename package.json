@@ -6,7 +6,8 @@
   "scripts": {
     "start-server": "npm run build-server && node server.cjs",
     "build-server": "tsc server.ts --outDir . --module commonjs --resolveJsonModule true --esModuleInterop true --target es2016 && (del server.cjs || true) && ren server.js server.cjs",
-    "dev": "concurrently \"vite\" \"node server.js\"",
+    "dev": "concurrently \"vite\" \"npm run start-server\"",
+    "build:server": "tsc server.ts --outDir . --module commonjs --esModuleInterop true --target es2022",
     "test": "vitest",
     "test:once": "vitest run",
     "test:coverage": "vitest coverage",
@@ -27,11 +28,13 @@
     "jsdom": "^26.0.0",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
     "vite": "^6.2.5",
     "vitest": "^3.0.8"
   },
   "dependencies": {
+    "@google/genai": "^0.8.0",
     "@google/generative-ai": "^0.24.0",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
@@ -47,7 +50,6 @@
     "react-icons": "^5.5.0",
     "react-markdown": "^10.1.0",
     "react-router": "^7.3.0",
-    "ts-node": "^10.9.2",
     "vis-data": "7.1.9",
     "vis-network": "9.1.9",
     "vis-util": "5.0.7"

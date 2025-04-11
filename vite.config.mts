@@ -12,8 +12,7 @@ export default defineConfig({
         proxy: {
             // Proxy requests starting with /api to the backend server
            '/api': {
-               target: 'http://127.0.0.1:3001', // Explicitly use IPv4 loopback
-               // target: 'http://localhost:3001', // Your backend server address
+               target: 'http://127.0.0.1:3001', // Force IPv4
                 changeOrigin: true, // Recommended for virtual hosted sites
                 // secure: false, // Uncomment if backend uses self-signed SSL cert
                 // rewrite: (path) => path.replace(/^\/api/, ''), // Uncomment if backend doesn't expect /api prefix

@@ -111,6 +111,7 @@ const JobPosting = () => {
     }
 
     try {
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Wait 1 second
       const response = await fetch('/api/generate-content', { // Use relative URL
         method: 'POST',
         headers: {
