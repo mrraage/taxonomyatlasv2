@@ -21,14 +21,14 @@ console.log("Gemini API key validation successful");
 // Configure API with retry logic and rate limiting
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({
-  model: "gemini-pro",
+  model: "gemini-1.5-flash-latest", // Use latest flash model
   generationConfig: {
     maxOutputTokens: 1000,
     temperature: 0.7,
     topP: 0.9
   },
   safetySettings: [
-    { category: "HARM_CATEGORY_DANGEROUS", threshold: "BLOCK_ONLY_HIGH" }
+    { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_ONLY_HIGH" }
   ]
 });
 
@@ -117,10 +117,13 @@ const generateContentHandler: express.RequestHandler = async (
     // Implicit return here is fine for async RequestHandler
   } catch (error) {
     console.error('Detailed API Error in /api/generate-content:', error); // Log the full error object
-    const errorMessage = error instanceof Error ? error.message : 'Unknown backend error';
-    // Ensure function returns after sending response in catch block
+    const errorMessage = (error as Error)?.message || (error as any)?.toString() || 'Unknown backend error';
+    const httpStatus = (error as any)?.response?.status || 500;
     if (!res.headersSent) {
-      res.status(500).json({ error: `Failed to generate content: ${errorMessage}` });
+      res.status(httpStatus).json({
+        error: `Failed to generate content: ${errorMessage}`,
+        ...(process.env.NODE_ENV === 'development' && { details: (error as Error).stack })
+      });
     }
   }
 };

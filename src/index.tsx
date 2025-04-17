@@ -9,7 +9,8 @@ import JobPosting from "./components/JobPosting.tsx";
 import About from "./page/about.tsx"
 import Explore from "./page/explore.tsx"
 import Version from "./page/version.tsx"
-import "./i18/config"
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n';
 import "./index.css"
 
 
@@ -21,6 +22,7 @@ if (container === null) {
 const root = createRoot(container)
 
 root.render(
+  <I18nextProvider i18n={i18n}>
     <BrowserRouter>
         <Routes>
             {/* Routes without the new header */}
@@ -41,4 +43,5 @@ root.render(
             </Route>
         </Routes>
     </BrowserRouter>
+  </I18nextProvider>
 )

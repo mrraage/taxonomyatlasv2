@@ -30,14 +30,14 @@ console.log("Gemini API key validation successful");
 // Configure API with retry logic and rate limiting
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({
-    model: "gemini-pro",
+    model: "gemini-1.5-flash-latest", // Use latest flash model
     generationConfig: {
         maxOutputTokens: 1000,
         temperature: 0.7,
         topP: 0.9
     },
     safetySettings: [
-        { category: "HARM_CATEGORY_DANGEROUS", threshold: "BLOCK_ONLY_HIGH" }
+        { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_ONLY_HIGH" }
     ]
 });
 // Rate limiting configuration
@@ -92,7 +92,7 @@ const rateLimiter = (req, res, next) => {
 app.use('/api/generate-content', rateLimiter);
 // Define the handler function separately
 const generateContentHandler = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    var _a;
+    var _a, _b;
     console.log('Received generate-content request:', req.body);
     console.log('Using API Key:', ((_a = process.env.GEMINI_API_KEY) === null || _a === void 0 ? void 0 : _a.slice(0, 8)) + '...');
     try {
@@ -113,10 +113,10 @@ const generateContentHandler = (req, res) => __awaiter(void 0, void 0, void 0, f
     }
     catch (error) {
         console.error('Detailed API Error in /api/generate-content:', error); // Log the full error object
-        const errorMessage = error instanceof Error ? error.message : 'Unknown backend error';
-        // Ensure function returns after sending response in catch block
+        const errorMessage = (error === null || error === void 0 ? void 0 : error.message) || (error === null || error === void 0 ? void 0 : error.toString()) || 'Unknown backend error';
+        const httpStatus = ((_b = error === null || error === void 0 ? void 0 : error.response) === null || _b === void 0 ? void 0 : _b.status) || 500;
         if (!res.headersSent) {
-            res.status(500).json({ error: `Failed to generate content: ${errorMessage}` });
+            res.status(httpStatus).json(Object.assign({ error: `Failed to generate content: ${errorMessage}` }, (process.env.NODE_ENV === 'development' && { details: error.stack })));
         }
     }
 });
